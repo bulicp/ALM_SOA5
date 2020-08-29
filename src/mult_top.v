@@ -4,11 +4,11 @@ module mult_top(
     // Clock and reset
     input clk,
     // Input X has a form x_i%d where %d denotes the bit number
-    input  [15:0] x,
+    input  [7:0] x,
     // Input Y has a form y_i%d where %d denotes the bit number
-    input  [15:0] y,
+    input  [7:0] y,
     // Output P has a form p_out%d where %d denotes the bit number
-    output reg [31:0] p_out
+    output reg [15:0] p_out
     );
 
     
@@ -16,9 +16,9 @@ module mult_top(
     // Then we do processing with these signals and store the 
     // intermidiate result in P_vec
     // For example purposes X_vec and Y_vec are concanated and stored in P_vec
-    wire [31:0] P_vec;
-    reg [15:0] X_vec;
-    reg [15:0] Y_vec;
+    wire [15:0] P_vec;
+    reg [7:0] X_vec;
+    reg [7:0] Y_vec;
     
     ALM_SOA5 mult(X_vec,Y_vec,P_vec); 
 
